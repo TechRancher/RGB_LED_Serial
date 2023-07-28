@@ -28,7 +28,6 @@ int maroon[3] = { 128, 0, 0 };
 int gold[3] = { 255, 215, 0 };
 int silver[3] = { 192, 192, 192 };
 int off[3] = { 0, 0, 0 };
-int k[3];
 String msg = "Choose a color you want the LED to display.";
 String msg2 = "The colors to choose are: ";
 String colorList[21] = { "Red", "Green", "Blue", "Yellow", "Magenta", "Cyan", "Orange", "Purple", "Turquoise", "Pink", "Lime Green", "Sky Blue", "Peach", "Lavender", "Teal", "Brown", "Olive Green", "Maroon", "Gold", "Silver", "Off" };
