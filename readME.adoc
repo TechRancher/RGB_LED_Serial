@@ -1,0 +1,86 @@
+== Using Serial Monitor To Get Info From User And Display Color
+
+:Project: Using Serial Monitor to get input from user to display one of the 20 chose colors on the RGB LED
+:Author: Jason Sikes
+:AKA: TechRancher
+:Email: https://id.arduino.cc/sikesjay
+:Date: July 27, 2023
+:Revision: 1
+
+Title of this project is: {project}
+
+Author is {author}
+
+Also known as: {aka}
+
+Written on: {date}
+
+Version: {revision}
+
+.Description of the project
+We will be using Serial Monitor to have the user choose either one of the 20 different
+colors to have the RGB LED display it.
+
+.Items Needed
+* One RGB LED
+* Three 330ohm Resistor
+* One Arduino R3 
+* One Breadboard
+* Four jumper wires
+
+.Circuit Design
+On the breadboard I installed left leg of one 330ohm resistor into column 15 with
+the right leg into column 45. I installed anther 330ohm resistor with the left leg into column 16
+with the right leg into column 44. Then the last 330ohm resistor with the left leg into column 19
+and the right leg into column 42.  The RGB LED has 4 legs. Let's look at these legs and I 
+will point out the colors and GND by the size of the legs. With the RGB LED in your hand look for the longest leg.
+This leg is GND. Turn the RGB LED until the longest leg (GND) is on the middle right side. As shown in the figure below.
+
+.RGB LED Layout
+----
+RGB LED
+L E G S
+x x x x
+x x x x
+  x x x
+    x
+B G G R
+L R N E
+U E D D
+E E 
+  N
+----
+
+With the above layout you can see that the colors by the legs are: Blue (Far Left), Green (middle Left), GND (middle Righ and longest leg), 
+Red (Far Right). We will place the RGB LED into columns (blue) 45, column (green) 44, column (GND) 43, and column (red) 42.
+Now run the GND jumper wire from the Arduino GND pin to column 43. Take the next jumper wire from pin 11 from the Arduino to column 15 for 
+the blue signal. The other jumper wire from pin 10 from the Arduino to column 16 for green signal. Now the last jumper wire from pin 9 from 
+the Arduino to column 18 for the red signal. This should close our circuit.
+
+.Code
+The code for this project is in the file called "MixColorsLED.ino".
+
+.What To Expect
+The Serial Monitor has a location on it to where the user can enter info. We wrote
+the code to have a message asking the user to choose either Red, Green, Blue, Yellow, Magenta, Cyan, Orange, Purple, Turquoise, Pink, 
+Lime Green, Sky Blue, Peach, Lavender, Teal, Brown, Olive Green, Maroon, Gold, Silver, Off LED. With the code we will take the user's 
+input and lowercase the data to help us analize the data to make sure it meets our requirements. If it fails our requirement then we
+ask the user to reenter their choise.
+In order for the Serial to listen we will use three things.
+
+. Serial.println(msg); // msg was declaired in our variable as a String message
+. while (Serial.available() == 0) {} // This is a loop that will keep looping until data is entered and the enter button is pressed
+. colorLED = Serial.readString(); // Serial will take the data from the user and store it in the variable
+
+
+We will use Arrays to store the color choses and also the analog voltage for each color. We will also use functions to help with keeping
+our code down to as simple and easy to read.
+
+Look over the code in the file MixColorsLED.ino to see how we used the functions and arrays.
+
+.Licensing Of Code
+The code used to make the RGB LEDs light up is free to use how you wish. Take what you can get of the code to help you with your next
+project and to help you further understand how to use RGB LEDs and Serial Input from user into your Arduino projects.
+
+.Contact Me
+If you have any questions feel free to contact me at: {email}
