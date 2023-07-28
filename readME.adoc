@@ -79,6 +79,8 @@ our code down to as simple and easy to read.
 Look over the code in the file MixColorsLED.ino to see how we used the functions and arrays.
 
 .Licensing Of Code
+GNU GENERAL PUBLIC LICENSE
+Version 3, 29 June 2007
 The code used to make the RGB LEDs light up is free to use how you wish. Take what you can get of the code to help you with your next
 project and to help you further understand how to use RGB LEDs and Serial Input from user into your Arduino projects.
 
